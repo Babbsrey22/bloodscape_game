@@ -10,7 +10,7 @@ class Instructions:
         "\t\tYou are playing as the Necromancer\n" \
         "\t\tFor each enter, you deal damage to the Ghoul\n" \
         "\t\tYou then have a choice to deal damage again or heal\n" \
-        "Good luck, and may the universe have mercy on you")
+        "\nGood luck, and may you defeat what you mistakenly created.")
         time.sleep(3)
         print("\n\t\t⋆༺  𓆩☠︎︎𓆪  ༻⋆\n" \
         "\t\t⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘⫘\n")
