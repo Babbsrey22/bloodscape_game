@@ -13,41 +13,25 @@ class Weapon:
         return f"{self.name} (Damage: {self.damage})"
 
 # ------------ object creation ------------
-infectious_bite = Weapon(name = "Infectious Bite",
-                    damage = 3) # Ghoul
+infectious_bite = Weapon("Infectious Bite", 3) # Ghoul
 
-tackle_and_claws = Weapon(name = "Tackle and Claws",
-                damage = 2) # Ghoul
+tackle_and_claws = Weapon("Tackle and Claws", 2) # Ghoul
 
-bone_spear = Weapon(name = "Bone Spear",
-                    damage = 4) # Ghoul
+bone_spear = Weapon("Bone Spear", 4) # Ghoul
 
-false_life = Weapon(name = "False Life",
-                    damage = 5) # Necromancer
+false_life = Weapon("False Life", 5) # Necromancer
 
-circle_of_death = Weapon(name = "Circle of Death",
-                         damage = 6) # Necromancer
+circle_of_death = Weapon("Circle of Death", 6) # Necromancer
 
-inflict_wounds = Weapon(name = "Inflict Wounds",
-                        damage = 2) # Necromancer
+inflict_wounds = Weapon("Inflict Wounds", 2) # Necromancer
 
-paralysis = Weapon(name = "Paralysis",
-                   damage = 6) # Ghoul
+paralysis = Weapon("Paralysis", 6) # Ghoul
 
-necrotic_blast = Weapon(name = "Necrotic Blast",
-                        damage = 4) # Necromancer
+necrotic_blast = Weapon("Necrotic Blast", 4) # Necromancer
 
-bleeding_scream = Weapon(name = "Bleeding Scream",
-                         damage = 5) # Ghoul
+bleeding_scream = Weapon("Bleeding Scream", 5) # Ghoul
 
-ray_of_sickness = Weapon(name = "Ray of Sickness",
-                         damage = 3) # Necromancer
+ray_of_sickness = Weapon("Ray of Sickness", 3) # Necromancer
 
 weapons_list = [infectious_bite, tackle_and_claws, bone_spear, bleeding_scream, 
                 paralysis, inflict_wounds, ray_of_sickness, necrotic_blast, false_life, circle_of_death]
-
-# DEBUGGING!! Check if dictionary and random.choice works
-for weapon in weapons_list:
-    print(weapon)
-
-print("Randomly chosen weapon: ", random.choice(weapons_list))
