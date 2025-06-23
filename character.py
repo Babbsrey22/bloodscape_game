@@ -60,4 +60,4 @@ class Enemy(Character):
         super().__init__(name=name, health=health)
         self.weapon = weapon
 
-        self.health_bar = HealthBar(self, color="red")
+        self.health_bar = HealthBar(self, color="yellow")
