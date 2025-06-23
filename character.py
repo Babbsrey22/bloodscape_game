@@ -1,6 +1,7 @@
-# ------------ imports ------------
-from weapon import fists
+from weapon import fists, iron_sword, short_bow
 from health_bar import HealthBar
+
+import random
 
 
 # ------------ parent class setup ------------
@@ -16,11 +17,17 @@ class Character:
         self.weapon = fists
 
     def attack(self, target) -> None:
-        target.health -= self.weapon.damage
+        # Randomize damage between ±2 of the base weapon damage
+        damage = random.randint(max(1, self.weapon.damage - 2), self.weapon.damage + 2)
+
+        if random.random() < 0.1:  
+            damage *= 2
+            print("Critical hit!")
+
+        target.health -= damage
         target.health = max(target.health, 0)
         target.health_bar.update()
-        print(f"{self.name} dealt {self.weapon.damage} damage to "
-              f"{target.name} with {self.weapon.name}")
+        print(f"{self.name} dealt {damage} damage to {target.name} with {self.weapon.name}")
 
 
 # ------------ subclass setup ------------
