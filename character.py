@@ -48,6 +48,12 @@ class Necromancer(Character):
     def drop(self) -> None:
         print(f"{self.name} dropped the {self.weapon.name}!")
         self.weapon = self.default_weapon
+    
+    def heal(self):
+        heal_amount = random.randint(5, 10)
+        self.health = min(self.health + heal_amount, self.health_max)
+        self.health_bar.update()
+        print(f"{self.name} heals for {heal_amount} HP!")
 
 
 # ------------ subclass setup ------------
@@ -61,3 +67,9 @@ class Ghoul(Character):
         self.weapon = weapon
 
         self.health_bar = HealthBar(self, color="yellow")
+    
+    def heal(self):
+        heal_amount = random.randint(5, 10)
+        self.health = min(self.health + heal_amount, self.health_max)
+        self.health_bar.update()
+        print(f"{self.name} heals for {heal_amount} HP!")
