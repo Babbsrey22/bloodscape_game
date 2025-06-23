@@ -1,0 +1,15 @@
+> change original weapons to fit theme:
+Necromancer - spells
+Ghoul - physical
+
+> change health bar color when healing (blue)
+
+> adjust ghoul stats to make necromancer defeat more likely
+
+> add ascii art for victory/defeat/exit sequences
+
+> add more dialogues mid-fight
+
+> fix main loop sequence (time delay and health bar sequences)
+
+> fix intro sequence (before 'Press enter to start')
