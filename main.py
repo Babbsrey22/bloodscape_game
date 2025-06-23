@@ -58,6 +58,9 @@ def repeat():
 while True:
     os.system("cls")
 
+    hero = Necromancer(name="Necromancer", health=100)
+    enemy = Ghoul(name="Ghoul", health=100, weapon = random.choice(ghoul_weapons))
+
     print("" \
     " ▄▄▄▄    ██▓     ▒█████   ▒█████  ▓█████▄   ██████  ▄████▄   ▄▄▄       ██▓███  ▓█████ \n" \
     "▓█████▄ ▓██▒    ▒██▒  ██▒▒██▒  ██▒▒██▀ ██▌▒██    ▒ ▒██▀ ▀█  ▒████▄    ▓██░  ██▒▓█   ▀ \n" \
