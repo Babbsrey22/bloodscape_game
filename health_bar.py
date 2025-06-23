@@ -35,6 +35,7 @@ class HealthBar:
 
         self.is_colored = is_colored
         self.color = self.colors.get(color) or self.colors["default"]
+        self.temp_heal_color = None
 
     def update(self) -> None:
         self.current_value = self.entity.health
@@ -43,9 +44,13 @@ class HealthBar:
         remaining_bars = round(self.current_value / self.max_value * self.length)
         lost_bars = self.length - remaining_bars
 
-        # Change color when critical health
         if self.is_colored:
-            if self.current_value < self.max_value * 0.3:
+            if self.temp_heal_color:
+                # Change color when healing
+                color_to_use = self.colors[self.temp_heal_color]
+                self.temp_heal_color = None
+            # Change color when critical health
+            elif self.current_value < self.max_value * 0.3:
                 color_to_use = self.colors["red"]
             else:
                 color_to_use = self.color

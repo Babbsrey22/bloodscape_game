@@ -5,13 +5,14 @@ import time
 
 from instructions import Instructions
 from character import Necromancer, Ghoul
-from weapon import short_bow, iron_sword
+from weapon import weapons_list
 from dialogue_lines import necromancer_lines
 
 # ------------ setup ------------
 hero = Necromancer(name="Necromancer", health=100)
-hero.equip(iron_sword)
-enemy = Ghoul(name="Ghoul", health=100, weapon=short_bow)
+enemy = Ghoul(name="Ghoul", health=100, weapon = random.choice(weapons_list))
+print(f"Necromancer starts with: {hero.weapon}")
+print(f"The Ghoul starts with {enemy.weapon}")
 
 def player_turn(hero, enemy):
     while True:

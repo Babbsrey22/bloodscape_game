@@ -1,4 +1,4 @@
-from weapon import fists
+from weapon import weapons_list
 from health_bar import HealthBar
 
 import random
@@ -14,7 +14,7 @@ class Character:
         self.health = health
         self.health_max = health
 
-        self.weapon = fists
+        self.weapon = random.choice(weapons_list)
 
     def attack(self, target) -> None:
         # Randomize damage between ±2 of the base weapon damage
@@ -38,21 +38,15 @@ class Necromancer(Character):
                  ) -> None:
         super().__init__(name=name, health=health)
 
+        self.weapon = random.choice(weapons_list)
         self.default_weapon = self.weapon
         self.health_bar = HealthBar(self, color="green")
-
-    def equip(self, weapon) -> None:
-        self.weapon = weapon
-        print(f"{self.name} equipped a(n) {self.weapon.name}!")
-
-    def drop(self) -> None:
-        print(f"{self.name} dropped the {self.weapon.name}!")
-        self.weapon = self.default_weapon
     
     def heal(self):
-        heal_amount = random.randint(5, 10)
+        heal_amount = random.randint(2, 10)
         self.health = min(self.health + heal_amount, self.health_max)
         self.health_bar.update()
+        self.health_bar.temp_heal_color = "blue2"
         print(f"{self.name} heals for {heal_amount} HP!")
 
 
@@ -64,14 +58,15 @@ class Ghoul(Character):
                  weapon,
                  ) -> None:
         super().__init__(name=name, health=health)
-        self.weapon = weapon
+        self.weapon = random.choice(weapons_list)
 
         self.health_bar = HealthBar(self, color="yellow")
     
     def heal(self):
-        heal_amount = random.randint(5, 10)
+        heal_amount = random.randint(2, 10)
         self.health = min(self.health + heal_amount, self.health_max)
         self.health_bar.update()
+        self.health_bar.temp_heal_color = "blue2"
         print(f"{self.name} heals for {heal_amount} HP!")
 
     def take_turn(self, target):
