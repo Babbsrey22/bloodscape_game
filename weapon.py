@@ -1,3 +1,5 @@
+import random
+
 # ------------ class setup ------------
 class Weapon:
     def __init__(self,
@@ -7,6 +9,8 @@ class Weapon:
         self.name = name
         self.damage = damage
 
+    def __str__(self):
+        return f"{self.name} (Damage: {self.damage})"
 
 # ------------ object creation ------------
 infectious_bite = Weapon(name = "Infectious Bite",
@@ -38,3 +42,12 @@ bleeding_scream = Weapon(name = "Bleeding Scream",
 
 ray_of_sickness = Weapon(name = "Ray of Sickness",
                          damage = 3) # Necromancer
+
+weapons_list = [infectious_bite, tackle_and_claws, bone_spear, bleeding_scream, 
+                paralysis, inflict_wounds, ray_of_sickness, necrotic_blast, false_life, circle_of_death]
+
+# DEBUGGING!! Check if dictionary and random.choice works
+for weapon in weapons_list:
+    print(weapon)
+
+print("Randomly chosen weapon: ", random.choice(weapons_list))
