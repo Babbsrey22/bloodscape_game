@@ -1,10 +1,12 @@
 # ------------ imports ------------
 import os
+import random
 import time
 
 from instructions import Instructions
 from character import Necromancer, Ghoul
 from weapon import short_bow, iron_sword
+from dialogue_lines import necromancer_lines
 
 # ------------ setup ------------
 hero = Necromancer(name="Necromancer", health=100)
@@ -19,14 +21,19 @@ def player_turn(hero, enemy):
         choice = input("Choose an action: ")
 
         if choice == "1":
+            print(random.choice(necromancer_lines))
             hero.attack(enemy)
+            time.sleep(0.5)
             hero.health_bar.draw()
+            time.sleep(0.5)
             enemy.health_bar.update()
             enemy.health_bar.draw()
             break
         elif choice == "2":
             hero.heal()
+            time.sleep(0.5)
             hero.health_bar.draw()
+            time.sleep(0.5)
             enemy.health_bar.draw()            
             break
         else:
