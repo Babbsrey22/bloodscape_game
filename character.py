@@ -73,3 +73,15 @@ class Ghoul(Character):
         self.health = min(self.health + heal_amount, self.health_max)
         self.health_bar.update()
         print(f"{self.name} heals for {heal_amount} HP!")
+
+    def take_turn(self, target):
+        # If ghoul health low, 50% chance to heal
+        if self.health < self.health_max * 0.4 and random.random() < 0.5:
+            self.heal()
+            return
+        
+        if random.random() < 0.15:
+            print(f"{self.name} tried to attack but missed!")
+            return
+
+        self.attack(target)
