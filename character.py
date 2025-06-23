@@ -1,4 +1,4 @@
-from weapon import weapons_list
+from weapon import ghoul_weapons, necro_weapons
 from health_bar import HealthBar
 
 import random
@@ -14,9 +14,11 @@ class Character:
         self.health = health
         self.health_max = health
 
-        self.weapon = random.choice(weapons_list)
+        self.weapon = random.choice(ghoul_weapons + necro_weapons)
 
     def attack(self, target) -> None:
+        self.weapon = random.choice(ghoul_weapons + necro_weapons)
+
         # Randomize damage between ±2 of the base weapon damage
         damage = random.randint(max(1, self.weapon.damage - 2), self.weapon.damage + 2)
 
@@ -38,7 +40,7 @@ class Necromancer(Character):
                  ) -> None:
         super().__init__(name=name, health=health)
 
-        self.weapon = random.choice(weapons_list)
+        self.weapon = random.choice(necro_weapons)
         self.default_weapon = self.weapon
         self.health_bar = HealthBar(self, color="green")
     
@@ -58,7 +60,7 @@ class Ghoul(Character):
                  weapon,
                  ) -> None:
         super().__init__(name=name, health=health)
-        self.weapon = random.choice(weapons_list)
+        self.weapon = random.choice(ghoul_weapons)
 
         self.health_bar = HealthBar(self, color="yellow")
     

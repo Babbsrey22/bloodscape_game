@@ -33,5 +33,6 @@ bleeding_scream = Weapon("Bleeding Scream", 5) # Ghoul
 
 ray_of_sickness = Weapon("Ray of Sickness", 3) # Necromancer
 
-weapons_list = [infectious_bite, tackle_and_claws, bone_spear, bleeding_scream, 
-                paralysis, inflict_wounds, ray_of_sickness, necrotic_blast, false_life, circle_of_death]
+ghoul_weapons = [infectious_bite, tackle_and_claws, bone_spear, bleeding_scream, paralysis]
+                
+necro_weapons = [inflict_wounds, ray_of_sickness, necrotic_blast, false_life, circle_of_death]

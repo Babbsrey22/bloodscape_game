@@ -5,12 +5,12 @@ import time
 
 from instructions import Instructions
 from character import Necromancer, Ghoul
-from weapon import weapons_list
+from weapon import ghoul_weapons, necro_weapons
 from dialogue_lines import necromancer_lines
 
 # ------------ setup ------------
 hero = Necromancer(name="Necromancer", health=100)
-enemy = Ghoul(name="Ghoul", health=100, weapon = random.choice(weapons_list))
+enemy = Ghoul(name="Ghoul", health=100, weapon = random.choice(ghoul_weapons))
 print(f"Necromancer starts with: {hero.weapon}")
 print(f"The Ghoul starts with {enemy.weapon}")
 
