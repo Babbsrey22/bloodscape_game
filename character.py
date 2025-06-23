@@ -1,4 +1,4 @@
-from weapon import fists, iron_sword, short_bow
+from weapon import fists
 from health_bar import HealthBar
 
 import random
@@ -31,7 +31,7 @@ class Character:
 
 
 # ------------ subclass setup ------------
-class Hero(Character):
+class Necromancer(Character):
     def __init__(self,
                  name: str,
                  health: int
@@ -51,7 +51,7 @@ class Hero(Character):
 
 
 # ------------ subclass setup ------------
-class Enemy(Character):
+class Ghoul(Character):
     def __init__(self,
                  name: str,
                  health: int,

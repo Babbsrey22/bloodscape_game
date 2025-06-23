@@ -1,5 +1,8 @@
 # ------------ imports ------------
 import os
+import time
+
+from instructions import Instructions
 from character import Hero, Enemy
 from weapon import short_bow, iron_sword
 
@@ -23,7 +26,8 @@ while True:
     " ░    ░   ░ ░   ░ ░ ░ ▒  ░ ░ ░ ▒   ░ ░  ░ ░  ░  ░  ░          ░   ▒   ░░          ░   \n" \
     " ░          ░  ░    ░ ░      ░ ░     ░          ░  ░ ░            ░  ░            ░  ░\n" \
     " ░                            ░               ░                                  ")
-    
+
+    Instructions()
 
     hero.attack(enemy)
     enemy.attack(hero)
