@@ -2,28 +2,39 @@
 class Weapon:
     def __init__(self,
                  name: str,
-                 weapon_type: str,
-                 damage: int,
-                 value: int
+                 damage: int
                  ) -> None:
         self.name = name
-        self.weapon_type = weapon_type
         self.damage = damage
-        self.value = value
 
 
 # ------------ object creation ------------
-iron_sword = Weapon(name="Iron Sword",
-                    weapon_type="sharp",
-                    damage=5,
-                    value=10)
+infectious_bite = Weapon(name = "Infectious Bite",
+                    damage = 3) # Ghoul
 
-short_bow = Weapon(name="Short Bow",
-                   weapon_type="ranged",
-                   damage=4,
-                   value=8)
+tackle_and_claws = Weapon(name = "Tackle and Claws",
+                damage = 2) # Ghoul
 
-fists = Weapon(name="Fists",
-               weapon_type="blunt",
-               damage=2,
-               value=0)
+bone_spear = Weapon(name = "Bone Spear",
+                    damage = 4) # Ghoul
+
+false_life = Weapon(name = "False Life",
+                    damage = 5) # Necromancer
+
+circle_of_death = Weapon(name = "Circle of Death",
+                         damage = 6) # Necromancer
+
+inflict_wounds = Weapon(name = "Inflict Wounds",
+                        damage = 2) # Necromancer
+
+paralysis = Weapon(name = "Paralysis",
+                   damage = 6) # Ghoul
+
+necrotic_blast = Weapon(name = "Necrotic Blast",
+                        damage = 4) # Necromancer
+
+bleeding_scream = Weapon(name = "Bleeding Scream",
+                         damage = 5) # Ghoul
+
+ray_of_sickness = Weapon(name = "Ray of Sickness",
+                         damage = 3) # Necromancer
